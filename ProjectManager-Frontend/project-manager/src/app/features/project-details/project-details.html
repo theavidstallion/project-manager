@@ -1,0 +1,677 @@
+<div class="container mt-4">
+
+  @if (!project()) {
+    <div class="text-center mt-5">
+      <div class="spinner-border text-primary"></div>
+      <p class="mt-2">Loading project details...</p>
+    </div>
+  } 
+  
+  @else {
+    @let p = project()!; 
+
+    <div class="mb-4">
+      
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a routerLink="/dashboard" class="text-decoration-none">Dashboard</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ p.name }}</li>
+        </ol>
+      </nav>
+      
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="fw-bold mb-0">{{ p.name }}</h2>
+
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-outline-secondary btn-sm" (click)="openEditModal()">
+            <i class="bi bi-pencil-fill"></i> Edit
+          </button>
+
+          <button class="btn btn-outline-danger btn-sm" (click)="onDeleteProject()">
+             <i class="bi bi-trash-fill"></i> Delete
+          </button>
+
+          <div class="vr mx-1 text-secondary"></div>
+
+          <span class="badge fs-6" 
+            [class.text-bg-success]="p.status === 'Active'"
+            [class.text-bg-secondary]="p.status !== 'Active'">
+            {{ p.status }}
+          </span>
+        </div>
+      </div>
+
+      <p class="text-muted mt-2">{{ p.description }}</p>
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <div class="avatar-circle bg-secondary-subtle text-secondary fw-bold small" 
+            style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+            {{ p.creatorName.charAt(0) || '?' }}
+        </div>
+        <span class="small text-muted fw-bold">Managed By: {{ p.creatorName }}</span>
+      </div>
+
+      <div class="d-flex gap-4 text-secondary small mt-3">
+        <div>
+          <i class="bi bi-calendar-event me-1"></i> 
+          <strong>Started:</strong> {{ p.startDate | date:'mediumDate' }}
+        </div>
+        <div>
+          <i class="bi bi-calendar-check me-1"></i> 
+          <strong>Deadline:</strong> 
+          @if (p.endDate) {
+            {{ p.endDate | date:'mediumDate' }}
+          } @else {
+            <span class="fst-italic">Ongoing</span>
+          }
+        </div>
+      </div>
+
+    </div>
+    
+    <hr>
+
+    <div class="row align-items-center mb-3">
+      
+      <div class="card bg-light border-0 mb-3">
+        <div class="card-body p-3">
+          <div class="row g-2">
+            
+            <div class="col-md-2">
+              <select class="form-select form-select-sm" [(ngModel)]="filterConfig.status" (change)="applyFilters()">
+                <option value="">All Statuses</option>
+                <option value="To Do">To Do</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <select class="form-select form-select-sm" [(ngModel)]="filterConfig.priority" (change)="applyFilters()">
+                <option value="">All Priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <select class="form-select form-select-sm" [(ngModel)]="filterConfig.assignedUserId" (change)="applyFilters()">
+                <option value="">All Members</option>
+                @if (project(); as p) {
+                  @for (member of p.members; track member.userId) {
+                    <option [value]="member.userId">{{ member.firstName }} {{ member.lastName }}</option>
+                  }
+                }
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <select class="form-select form-select-sm" [(ngModel)]="filterConfig.tag" (change)="applyFilters()">
+                <option value="">All Tags</option>
+                @for (tag of availableTags(); track tag.id) {
+                  <option [value]="tag.name">{{ tag.name }}</option>
+                }
+              </select>
+            </div>
+
+            <div class="col-md-auto">
+              <input type="date" class="form-control form-control-sm" 
+                    [(ngModel)]="filterConfig.startDate" (change)="applyFilters()" 
+                    placeholder="Start Date" title="Due after...">
+            </div>
+
+            <div class="col-md-auto">
+              <input type="date" class="form-control form-control-sm" 
+                    [(ngModel)]="filterConfig.endDate" (change)="applyFilters()" 
+                    placeholder="End Date" title="Due before...">
+            </div>
+
+            <div class="col-md-auto ms-auto">
+              <button class="btn btn-sm btn-outline-secondary" (click)="clearFilters()" title="Reset Filters">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 d-flex align-items-center gap-3">
+        <h4 class="fw-bold mb-0">Tasks</h4>
+        <span class="badge bg-light text-dark border">{{ projectTasks().length }} items</span>
+      </div>
+
+      <div class="col-md-4 d-flex gap-2 justify-content-end">
+        <button class="btn btn-outline-primary" (click)="openAddMemberModal()">
+          <i class="bi bi-person-plus-fill"></i> Add Member
+        </button>
+        <button class="btn btn-primary" (click)="openAddTaskModal()">
+          <i class="bi bi-plus-lg"></i> New Task
+        </button>
+      </div>
+    </div>
+
+    <div class="row">
+      
+      <div class="col-md-8">
+        <div class="card shadow-sm border-0">
+          <div class="list-group list-group-flush">
+            @if (projectTasks().length === 0) {
+              <div class="text-center py-5 text-muted">
+                <i class="bi bi-clipboard-check fs-1 d-block mb-2"></i>
+                <p>No tasks found for this project.</p>
+              </div>
+            }
+
+            @for (task of filteredTasks(); track task.id) {
+              <div class="list-group-item p-3 task-hover-effect" style="cursor: pointer;" (click)="openTaskDetail(task)">
+                <div class="d-flex justify-content-between align-items-start">
+                  
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <span class="fw-bold text-dark text-decoration-none">{{ task.title }}</span>
+                      <span class="badge border" [ngClass]="getPriorityClass(task.priority)">
+                        {{ task.priority }}
+                      </span>
+                    </div>
+                    
+                    <p class="text-muted small mb-2 text-truncate" style="max-width: 500px;">
+                      {{ task.description }}
+                    </p>
+
+                    <div class="d-flex align-items-center gap-3 small text-muted">
+                      <span><i class="bi bi-person-circle"></i> {{ task.assignedUserName || 'Unassigned' }}</span>
+                      <span><i class="bi bi-calendar"></i> {{ task.dueDate | date:'mediumDate' }}</span>
+                      
+                      @if (task.tags.length > 0) {
+                        <div class="d-flex gap-1">
+                           @for (tag of task.tags; track tag) {
+                             <span class="badge bg-light text-secondary border">{{ tag }}</span>
+                           }
+                        </div>
+                      }
+                    </div>
+                  </div>
+
+                  <span class="badge rounded-pill" [ngClass]="getStatusBadge(task.status)">
+                    {{ task.status }}
+                  </span>
+
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-white">
+            <h5 class="mb-0">Team Members</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            @for (member of p.members; track member.userId) {
+              <li class="list-group-item d-flex align-items-center justify-content-between group-hover-container">
+  
+                <div class="d-flex align-items-center">
+                  <div class="avatar-circle bg-light text-primary me-2 fw-bold" 
+                        style="width:32px; height:32px; display:flex; align-items:center; justify-content:center; border-radius:50%;">
+                    {{ member.firstName.charAt(0) }}
+                  </div>
+                  <div>
+                    <div class="fw-bold">
+                      {{ member.firstName }} {{ member.lastName }}
+                      @if (p.creatorName === member.firstName + ' ' + member.lastName) { <span class="badge bg-secondary-subtle text-secondary" style="font-size: 0.6rem;">Owner</span>
+                      }
+                    </div>
+                    <div class="small text-muted" style="font-size: 0.8rem;">{{ member.email }}</div>
+                  </div>
+                </div>
+
+                @if (canManageMembers() && member.userId !== authService.currentUser()?.userId) {
+                  <button class="btn btn-link text-danger p-0 delete-btn" 
+                          title="Remove Member"
+                          (click)="onRemoveMember(member)">
+                    <i class="bi bi-person-x-fill fs-5"></i>
+                  </button>
+                }
+
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  }
+</div>
+
+<div class="modal fade" id="addMemberModal" #addMemberModal tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">Add Project Member</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="input-group mb-3">
+          <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" class="form-control border-start-0" placeholder="Search by name or email..." 
+                 [(ngModel)]="searchQuery" (input)="onSearch()">
+        </div>
+
+        <div class="list-group overflow-auto" style="max-height: 300px;">
+          @if (filteredUsers().length === 0) {
+            <div class="text-center text-muted py-4">
+              <i class="bi bi-person-x fs-3 d-block mb-2"></i> No users found.
+            </div>
+          } @else {
+            @for (user of filteredUsers(); track user.id) {
+              <button type="button" class="list-group-item list-group-item-action d-flex align-items-center gap-3"
+                      [class.active]="selectedUserId() === user.id" (click)="selectUser(user.id)">
+                <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" 
+                     [class.bg-white]="selectedUserId() === user.id"
+                     [class.text-primary]="selectedUserId() === user.id"
+                     [class.bg-light]="selectedUserId() !== user.id"
+                     style="width: 40px; height: 40px; flex-shrink: 0;">
+                  {{ user.firstName.charAt(0) }}
+                </div>
+                <div class="flex-grow-1">
+                  <div class="fw-bold">{{ user.firstName }} {{ user.lastName }}</div>
+                  <div class="small" [class.text-white-50]="selectedUserId() === user.id" [class.text-muted]="selectedUserId() !== user.id">
+                    {{ user.email }}
+                  </div>
+                </div>
+                @if (selectedUserId() === user.id) { <i class="bi bi-check-circle-fill fs-5"></i> }
+              </button>
+            }
+          }
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" [disabled]="!selectedUserId()" (click)="onAddMember()">
+          Add Selected Member
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" #editProjectModal tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">Edit Project Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Project Name</label>
+            <input type="text" class="form-control" [(ngModel)]="editProjectObj.name" name="editName">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" rows="3" [(ngModel)]="editProjectObj.description" name="editDesc"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Start Date</label>
+              <input type="date" class="form-control" [(ngModel)]="editProjectObj.startDate" name="editStart">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">End Date</label>
+              <input type="date" class="form-control" [(ngModel)]="editProjectObj.endDate" name="editEnd">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Status</label>
+            <select class="form-select" [(ngModel)]="editProjectObj.status" name="editStatus">
+              <option value="Active">Active</option>
+              <option value="On Hold">On Hold</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="onUpdateProject()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" #addTaskModal tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">Create New Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Task Title <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" [(ngModel)]="newTaskObj.title" name="tTitle" placeholder="e.g. Design Homepage">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" rows="3" [(ngModel)]="newTaskObj.description" name="tDesc"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Priority</label>
+              <select class="form-select" [(ngModel)]="newTaskObj.priority" name="tPriority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Due Date <span class="text-danger">*</span></label>
+              <input type="date" class="form-control" [(ngModel)]="newTaskObj.dueDate" name="tDate">
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <label class="form-label d-block">Tags</label>
+            <div class="d-flex flex-wrap gap-2">
+              @for (tag of availableTags(); track tag.id) {
+                <span class="badge cursor-pointer user-select-none" 
+                      style="cursor: pointer;"
+                      [class.bg-primary]="isTagSelected(tag.id)"
+                      [class.bg-light]="!isTagSelected(tag.id)"
+                      [class.text-dark]="!isTagSelected(tag.id)"
+                      [class.border]="!isTagSelected(tag.id)"
+                      (click)="toggleTagSelection(tag.id)">
+                  {{ tag.name }}
+                  @if (isTagSelected(tag.id)) { <i class="bi bi-check ms-1"></i> }
+                </span>
+              }
+              @if (availableTags().length === 0) {
+                <span class="text-muted small fst-italic">No tags available in system.</span>
+              }
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Assign To <span class="text-danger">*</span></label>
+            <select class="form-select" [(ngModel)]="newTaskObj.assignedUserId" name="tAssign">
+              <option value="" disabled>Select a member...</option>
+              @if (project(); as p) {
+                @for (member of p.members; track member.userId) {
+                  <option [value]="member.userId">
+                    {{ member.firstName }} {{ member.lastName }}
+                  </option>
+                }
+              }
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="onSaveTask()">Create Task</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" #taskDetailModal tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog modal-lg"> 
+    <div class="modal-content">
+      
+      @if (selectedTask) {
+        
+        <div class="modal-header">
+          <div class="d-flex align-items-center gap-2">
+            @if (!isEditingTask()) {
+              <span class="text-muted small fw-bold">#{{ selectedTask.id }}</span>
+              <span class="badge" [ngClass]="getStatusBadge(selectedTask.status)">
+                {{ selectedTask.status }}
+              </span>
+            } @else {
+               <span class="fw-bold text-primary">Editing Task #{{ selectedTask.id }}</span>
+            }
+          </div>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="cancelEditTask()"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row">
+            
+            <div class="col-md-8 border-end">
+              
+              @if (!isEditingTask()) {
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <h4 class="fw-bold mb-0">{{ selectedTask.title }}</h4>
+                    
+                    <div class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-danger" (click)="onDeleteTask()" title="Delete Task">
+                        <i class="bi bi-trash-fill"></i>
+                    </button>
+
+                    <button class="btn btn-sm btn-outline-secondary" (click)="startEditTask()">
+                        <i class="bi bi-pencil-fill"></i> Edit
+                    </button>
+                    </div>
+                </div>
+                
+                <h6 class="text-muted text-uppercase small fw-bold mb-2">Description</h6>
+                <p class="text-secondary mb-4" style="white-space: pre-wrap;">
+                  {{ selectedTask.description || 'No description provided.' }}
+                </p>
+
+                <ul class="nav nav-tabs mb-3">
+                  <li class="nav-item"><a class="nav-link active" href="#">Comments</a></li>
+                </ul>
+
+                <div class="bg-light p-3 rounded mb-3 border" style="max-height: 300px; overflow-y: auto;">
+                   @if (taskComments().length === 0) {
+                      <div class="text-center text-muted py-4"><p class="small mb-0">No comments yet.</p></div>
+                   }
+                   @for (comment of taskComments(); track comment.id) {
+                     <div class="d-flex gap-2 mb-3">
+                        <div class="avatar-circle bg-white border text-primary fw-bold small flex-shrink-0" style="width:32px; height:32px; display:flex; align-items:center; justify-content:center; border-radius:50%;">{{ comment.authorName.charAt(0) }}</div>
+                        <div class="flex-grow-1">
+                           <div class="d-flex justify-content-between align-items-baseline">
+                              <span class="fw-bold small">{{ comment.authorName }}</span>
+                              <span class="text-muted" style="font-size: 0.75rem;">{{ comment.createdAt | date:'short' }}</span>
+                           </div>
+                           <div class="bg-white p-2 rounded border mt-1 position-relative group-hover-container">
+                              <p class="mb-0 small text-secondary">{{ comment.content }}</p>
+                              @if (isCommentAuthor(comment)) {
+                                <button class="btn btn-link text-danger p-0 position-absolute end-0 top-0 mt-1 me-2 delete-btn" (click)="onDeleteComment(comment.id)"><i class="bi bi-trash-fill"></i></button>
+                              }
+                           </div>
+                        </div>
+                     </div>
+                   }
+                </div>
+                <div class="d-flex gap-2">
+                   <input type="text" class="form-control" placeholder="Write a comment..." [(ngModel)]="newCommentText" (keydown.enter)="onAddComment()">
+                   <button class="btn btn-primary" (click)="onAddComment()" [disabled]="!newCommentText.trim()"><i class="bi bi-send-fill"></i></button>
+                </div>
+              }
+
+              @else {
+                <form>
+                  <div class="mb-3">
+                    <label class="form-label fw-bold">Title</label>
+                    <input type="text" class="form-control" [(ngModel)]="editTaskData.title" name="eTitle">
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label fw-bold">Description</label>
+                    <textarea class="form-control" rows="5" [(ngModel)]="editTaskData.description" name="eDesc"></textarea>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-6 mb-3">
+                      <label class="form-label fw-bold">Priority</label>
+                      <select class="form-select" [(ngModel)]="editTaskData.priority" name="ePriority">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                      </select>
+                    </div>
+                    <div class="col-6 mb-3">
+                      <label class="form-label fw-bold">Status</label>
+                      <select class="form-select" [(ngModel)]="editTaskData.status" name="eStatus">
+                        <option value="To Do">To Do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Done">Done</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-4">
+                     <label class="form-label fw-bold">Due Date</label>
+                     <input type="date" class="form-control" [(ngModel)]="editTaskData.dueDate" name="eDate">
+                  </div>
+
+                  <div class="d-flex gap-2 justify-content-end">
+                    <button type="button" class="btn btn-secondary" (click)="cancelEditTask()">Cancel</button>
+                    <button type="button" class="btn btn-primary" (click)="onSaveChanges()">Save Changes</button>
+                  </div>
+                </form>
+              }
+
+            </div>
+
+            <div class="col-md-4">
+               <div class="mb-4">
+                <label class="small text-muted fw-bold text-uppercase">Assigned To</label>
+                <div class="d-flex align-items-center mt-1">
+                  <div class="avatar-circle bg-primary text-white me-2 fw-bold small" style="width:28px; height:28px; display:flex; align-items:center; justify-content:center; border-radius:50%;">
+                    {{ selectedTask.assignedUserName.charAt(0) }}
+                  </div>
+                  <span>{{ selectedTask.assignedUserName }}</span>
+                </div>
+                </div>
+
+              @if (!isEditingTask()) {
+                <div class="mb-4">
+                  <label class="small text-muted fw-bold text-uppercase">Due Date</label>
+                  <div class="mt-1"><i class="bi bi-calendar"></i> {{ selectedTask.dueDate | date:'mediumDate' }}</div>
+                </div>
+
+                <div class="mb-4">
+                  <label class="small text-muted fw-bold text-uppercase">Priority</label>
+                  <div class="mt-1">
+                    <span class="badge border" [ngClass]="getPriorityClass(selectedTask.priority)">
+                      {{ selectedTask.priority }}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label class="small text-muted fw-bold text-uppercase">Status</label>
+                  <div class="mt-1">
+                    
+                    @if (canMemberUpdateStatus()) {
+                      <select class="form-select form-select-sm" 
+                              [ngModel]="selectedTask.status" 
+                              (change)="onMemberStatusChange($event)"
+                              [ngClass]="{
+                                'border-success text-success': selectedTask.status === 'Done',
+                                'border-warning text-warning': selectedTask.status === 'In Progress',
+                                'border-secondary text-secondary': selectedTask.status === 'To Do'
+                              }">
+                        <option value="To Do">To Do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Done">Done</option>
+                      </select>
+                    } 
+                    
+                    @else {
+                      <span class="badge rounded-pill" [ngClass]="getStatusBadge(selectedTask.status)">
+                        {{ selectedTask.status }}
+                      </span>
+                      @if (authService.currentUser()?.role === 'Member' && !canMemberUpdateStatus()) {
+                        <div class="small text-muted fst-italic mt-1" style="font-size: 0.75rem;">
+                          You must be assigned to this task to update it.
+                        </div>
+                      }
+                    }
+
+                  </div>
+                </div>
+              }
+
+              <div class="mb-4">
+                <label class="small text-muted fw-bold text-uppercase d-block mb-2">Tags</label>
+                <div class="d-flex flex-wrap gap-1 mb-2">
+                  @for (tag of selectedTask.tags; track tag) {
+                    <span class="badge bg-light text-dark border">{{ tag }}</span>
+                  }
+                  @if (selectedTask.tags.length === 0) {
+                    <span class="text-muted small fst-italic">No tags</span>
+                  }
+                </div>
+                <button class="btn btn-sm btn-outline-secondary w-100" (click)="openManageTagsModal()" [disabled]="isEditingTask()">
+                  <i class="bi bi-gear-fill me-1"></i> Manage Tags
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Manage Tags -->
+<div class="modal fade" #manageTagsModal tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <h6 class="modal-title fw-bold">Manage Tags</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body">
+        <p class="small text-muted mb-3">Select tags to apply. Unselect to remove.</p>
+        
+        <div class="d-flex flex-wrap gap-2">
+          @for (tag of availableTags(); track tag.id) {
+            <span class="badge cursor-pointer user-select-none p-2" 
+                  style="cursor: pointer; transition: all 0.2s;"
+                  [class.bg-primary]="isManageTagSelected(tag.id)"
+                  [class.text-white]="isManageTagSelected(tag.id)"
+                  [class.bg-light]="!isManageTagSelected(tag.id)"
+                  [class.text-dark]="!isManageTagSelected(tag.id)"
+                  [class.border]="!isManageTagSelected(tag.id)"
+                  (click)="toggleManageTagSelection(tag.id)">
+              
+              {{ tag.name }}
+              
+              @if (isManageTagSelected(tag.id)) { 
+                <i class="bi bi-check-lg ms-1"></i> 
+              }
+            </span>
+          }
+          
+          @if (availableTags().length === 0) {
+            <div class="text-muted small fst-italic w-100 text-center">
+              No tags defined in system.
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-sm btn-primary" (click)="onSaveTags()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>

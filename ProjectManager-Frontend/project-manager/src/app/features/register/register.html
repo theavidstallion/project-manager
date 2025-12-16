@@ -1,0 +1,64 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="width: 400px;">
+    <h3 class="text-center mb-3">Register</h3>
+    
+    <form (ngSubmit)="registerForm.form.valid && onRegister()" #registerForm="ngForm" novalidate>
+      <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" name="firstName" 
+               [(ngModel)]="registerObj.firstName" required>
+      </div>
+      
+      <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="lastName" 
+               [(ngModel)]="registerObj.lastName" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" 
+               class="form-control" 
+               name="email" 
+               [(ngModel)]="registerObj.email" 
+               required
+               email
+               #emailCtrl="ngModel"
+               [class.is-invalid] = "emailCtrl.invalid && (emailCtrl.touched || registerForm.submitted)">
+        <div class="invalid-feedback">
+          @if (emailCtrl.errors?.['required']) { Email is required. }
+          @if (emailCtrl.errors?.['email']) { Invalid email format. }
+        </div>
+      
+      </div>
+
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" 
+               class="form-control" 
+               name="password" 
+               [(ngModel)]="registerObj.password" 
+               required
+               #passCtrl="ngModel"
+               minlength="6"
+               [class.is-invalid] = "passCtrl.invalid && (passCtrl.touched || registerForm.submitted)">
+        <div class="invalid-feedback">
+          @if (passCtrl.errors?.['required']) { Password is required. }
+          @if (passCtrl.errors?.['minlength']) { Password must be at least 6 characters. }
+        </div>
+      
+      </div>
+      
+      
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success" [disabled]="registerForm.invalid">Create Account</button>
+      </div>
+    </form>
+
+    <div class="mt-3 text-center">
+      <small>Already have an account? <a routerLink="/login">Login here</a></small>
+    </div>
+  </div>
+</div>

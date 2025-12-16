@@ -1,0 +1,125 @@
+<div class="container mt-4">
+  
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="fw-bold">User Management</h2>
+      <p class="text-muted">Manage system users, roles, and access.</p>
+    </div>
+    <button class="btn btn-primary" (click)="openCreateModal()">
+      <i class="bi bi-person-plus-fill"></i> Add User
+    </button>
+  </div>
+
+  <div class="card shadow-sm border-0">
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="bg-light">
+            <tr>
+              <th class="ps-4">User</th>
+              <th>Email / Username</th>
+              <th>Role</th> <th class="text-end pe-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (user of users(); track user.id) {
+              <tr>
+                <td class="ps-4">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar-circle bg-primary-subtle text-primary fw-bold me-3" 
+                         style="width:35px; height:35px; display:flex; align-items:center; justify-content:center; border-radius:50%">
+                      {{ user.firstName.charAt(0) }}
+                    </div>
+                    <span class="fw-semibold">{{ user.firstName }} {{ user.lastName }}</span>
+                  </div>
+                </td>
+                <td>{{ user.email }}</td>
+                <td>
+                  <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">
+                    {{ user.role || 'Unknown' }}
+                  </span>
+                </td>
+                <td class="text-end pe-4">
+                  <button class="btn btn-sm btn-outline-primary me-2" (click)="openRoleModal(user)">
+                    <i class="bi bi-shield-lock"></i> Role
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" (click)="onDeleteUser(user)">
+                    <i class="bi bi-trash"></i> Delete
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal fade" #createUserModal tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">Add New User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-control" [(ngModel)]="newUserObj.firstName" name="fname">
+            </div>
+            <div class="col">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-control" [(ngModel)]="newUserObj.lastName" name="lname">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" [(ngModel)]="newUserObj.email" name="email">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" [(ngModel)]="newUserObj.password" name="pwd">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Role</label>
+            <select class="form-select" [(ngModel)]="newUserObj.role" name="role">
+              <option value="Member">Member</option>
+              <option value="Manager">Manager</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="onCreateUser()">Create User</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" #changeRoleModal tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold">Change Role</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Select new role for <strong>{{ selectedUser?.firstName }}</strong>:</p>
+        <select class="form-select" [(ngModel)]="newRoleSelection" name="editRole">
+          <option value="Member">Member</option>
+          <option value="Manager">Manager</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary w-100" (click)="onChangeRole()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>

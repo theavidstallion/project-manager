@@ -1,0 +1,82 @@
+<div class="container mt-4">
+  
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="fw-bold mb-1">Audit Logs</h2>
+      <p class="text-muted mb-0">Track system changes and user activity.</p>
+    </div>
+    <button class="btn btn-outline-secondary btn-sm" (click)="loadLogs()">
+      <i class="bi bi-arrow-clockwise me-1"></i> Refresh
+    </button>
+  </div>
+
+  @if (isLoading()) {
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary"></div>
+      <p class="mt-2 text-muted">Loading history...</p>
+    </div>
+  } 
+  
+  @else if (logs().length === 0) {
+    <div class="alert alert-info">No activity logs found.</div>
+  } 
+  
+  @else {
+    <div class="card shadow-sm border-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="bg-light">
+            <tr>
+              <th scope="col" class="ps-4">Timestamp</th>
+              <th scope="col">User</th>
+              <th scope="col">Action</th>
+              <th scope="col">Entity</th>
+              <th scope="col">Changes</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (log of logs(); track log.id) {
+              <tr>
+                <td class="ps-4 text-muted small" style="white-space: nowrap;">
+                  {{ log.timestamp | date:'medium' }}
+                </td>
+
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="avatar-circle bg-light border text-secondary fw-bold small" 
+                         style="width:24px; height:24px; display:flex; align-items:center; justify-content:center; border-radius:50%;">
+                      {{ log.userName.charAt(0) || '?' }}
+                    </div>
+                    <span class="fw-bold small">{{ log.userName || 'System' }}</span>
+                  </div>
+                </td>
+
+                <td>
+                  <span class="badge border" [ngClass]="getActionColor(log.action)">
+                    {{ log.action }}
+                  </span>
+                </td>
+
+                <td>
+                  <span class="fw-bold text-dark">{{ log.entityName }}</span>
+                  <span class="text-muted small ms-1">#{{ log.id }}</span> 
+                  </td>
+
+                <td>
+                  <ul class="list-unstyled mb-0 small text-secondary">
+                    @for (change of getChanges(log); track change) {
+                      <li><i class="bi bi-dot"></i> {{ change }}</li>
+                    }
+                    @if (getChanges(log).length === 0) {
+                      <li class="fst-italic text-muted">No details recorded</li>
+                    }
+                  </ul>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  }
+</div>

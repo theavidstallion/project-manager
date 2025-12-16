@@ -1,0 +1,43 @@
+<div class="container text-center mt-5">
+  <div class="p-5 mb-4 bg-light rounded-3 shadow-sm border">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold mb-3">Welcome to ProjectManager</h1>
+      
+      @if (authService.isLoggedIn()) {
+        
+        <div class="animate-fade-in">
+          <div class="alert alert-success d-inline-block px-4 py-2">
+            <i class="bi bi-check-circle-fill me-2"></i> 
+            You are currently logged in.
+          </div>
+          
+          <p class="fs-4 mt-3">
+            Hello, <strong>{{ authService.currentUser()?.firstName }}</strong>!
+          </p>
+          <p class="text-muted">Your dashboard is ready.</p>
+          
+          <div class="mt-4">
+            <a routerLink="/dashboard" class="btn btn-primary btn-lg px-5">
+              Go to Dashboard
+            </a>
+          </div>
+        </div>
+
+      } @else {
+
+        <div>
+          <p class="col-md-8 fs-4 mx-auto text-muted">
+            The simplest way to manage your tasks and teams. 
+            Join us to get started.
+          </p>
+          
+          <div class="d-flex justify-content-center gap-3 mt-4">
+            <a routerLink="/login" class="btn btn-primary btn-lg">Login</a>
+            <a routerLink="/register" class="btn btn-outline-secondary btn-lg">Register</a>
+          </div>
+        </div>
+
+      }
+      </div>
+  </div>
+</div>

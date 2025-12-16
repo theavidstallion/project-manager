@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+/* GLOBAL COMMENT STYLES */
+
+/* 1. Define the Container context */
+.group-hover-container {
+    position: relative !important; 
+}
+
+/* 2. Hide button by default */
+.group-hover-container .delete-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    z-index: 100; /* Force it to sit on top */
+}
+
+/* 3. Show button on Hover */
+.group-hover-container:hover .delete-btn {
+    opacity: 1;
+    visibility: visible;
+}

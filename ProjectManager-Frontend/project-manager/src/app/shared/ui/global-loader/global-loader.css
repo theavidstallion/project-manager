@@ -1,0 +1,15 @@
+.loader-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* White background with 70% opacity */
+  background: rgba(255, 255, 255, 0.7); 
+  /* This creates the frosted glass effect */
+  backdrop-filter: blur(1px); 
+  z-index: 9999; /* Sit on top of everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
