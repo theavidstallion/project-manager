@@ -1,0 +1,1522 @@
+2025-12-16 19:14:42.234 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-16 19:14:42.292 +05:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-16 19:14:42.294 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-16 19:14:42.296 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-16 19:14:42.318 +05:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-16 19:14:42.337 +05:00 [INF] Applying migration '20251216141434_NewActicityLogTable'.
+2025-12-16 19:14:42.435 +05:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [ActivityLogs] (
+    [Id] int NOT NULL IDENTITY,
+    [EntityName] nvarchar(max) NOT NULL,
+    [EntityId] int NOT NULL,
+    [Action] nvarchar(max) NOT NULL,
+    [UserId] nvarchar(max) NULL,
+    [Timestamp] datetime2 NOT NULL,
+    [OldValues] nvarchar(max) NULL,
+    [NewValues] nvarchar(max) NULL,
+    CONSTRAINT [PK_ActivityLogs] PRIMARY KEY ([Id])
+);
+2025-12-16 19:14:42.446 +05:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20251216141434_NewActicityLogTable', N'8.0.0');
+2025-12-16 19:15:01.289 +05:00 [INF] User profile is available. Using 'C:\Users\Afzal Khan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-16 19:15:02.150 +05:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:15:02.217 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:15:02.222 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:15:02.227 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:15:02.257 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-12-16 19:15:02.262 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:15:02.266 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-12-16 19:15:02.270 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:15:02.283 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-16 19:15:02.464 +05:00 [INF] Now listening on: https://localhost:7063
+2025-12-16 19:15:02.467 +05:00 [INF] Now listening on: http://localhost:5117
+2025-12-16 19:15:02.507 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-16 19:15:02.509 +05:00 [INF] Hosting environment: Development
+2025-12-16 19:15:02.511 +05:00 [INF] Content root path: E:\.Net\ProjectManager\ProjectManager
+2025-12-16 19:15:02.612 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/swagger/index.html - null null
+2025-12-16 19:15:02.753 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/swagger/index.html - 200 null text/html;charset=utf-8 142.2588ms
+2025-12-16 19:15:02.783 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/swagger/swagger-ui.css - null null
+2025-12-16 19:15:02.783 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-16 19:15:02.789 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/_vs/browserLink - null null
+2025-12-16 19:15:02.797 +05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-12-16 19:15:02.798 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript; charset=utf-8 14.6335ms
+2025-12-16 19:15:02.803 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/swagger/swagger-ui.css - 499 152034 text/css 19.8452ms
+2025-12-16 19:15:02.831 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.7948ms
+2025-12-16 19:15:02.935 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/swagger/favicon-32x32.png - null null
+2025-12-16 19:15:02.941 +05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-12-16 19:15:02.943 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/swagger/favicon-32x32.png - 499 628 image/png 7.9307ms
+2025-12-16 19:15:02.977 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/swagger/v1/swagger.json - null null
+2025-12-16 19:15:02.995 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.9031ms
+2025-12-16 19:19:36.704 +05:00 [INF] User profile is available. Using 'C:\Users\Afzal Khan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-16 19:19:37.544 +05:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:19:37.604 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:19:37.610 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:19:37.614 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:19:37.642 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-12-16 19:19:37.651 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:19:37.655 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-12-16 19:19:37.658 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:19:37.670 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-16 19:19:37.851 +05:00 [INF] Now listening on: https://localhost:7063
+2025-12-16 19:19:37.853 +05:00 [INF] Now listening on: http://localhost:5117
+2025-12-16 19:19:37.898 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-16 19:19:37.901 +05:00 [INF] Hosting environment: Development
+2025-12-16 19:19:37.903 +05:00 [INF] Content root path: E:\.Net\ProjectManager\ProjectManager
+2025-12-16 19:19:37.930 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/swagger/index.html - null null
+2025-12-16 19:19:38.060 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/swagger/index.html - 200 null text/html;charset=utf-8 131.3406ms
+2025-12-16 19:19:38.082 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/_vs/browserLink - null null
+2025-12-16 19:19:38.082 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-16 19:19:38.098 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript; charset=utf-8 15.5493ms
+2025-12-16 19:19:38.120 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.4536ms
+2025-12-16 19:19:38.242 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/swagger/v1/swagger.json - null null
+2025-12-16 19:19:38.261 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.0497ms
+2025-12-16 19:20:27.518 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project - null null
+2025-12-16 19:20:27.518 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:20:27.533 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:20:27.533 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:20:27.535 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 16.8449ms
+2025-12-16 19:20:27.535 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project - 204 null null 17.1502ms
+2025-12-16 19:20:27.545 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:20:27.545 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project - null null
+2025-12-16 19:20:27.549 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:20:27.551 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:20:27.621 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:20:27.621 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:20:27.635 +05:00 [INF] Route matched with {action = "GetProjects", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectsAsync() on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:20:27.635 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:20:27.762 +05:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:20:27.766 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [t].[ProjectId], [t].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [t].[ProjectId], [t].[UserId]
+2025-12-16 19:20:27.773 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:20:27.787 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 145.5385ms
+2025-12-16 19:20:27.789 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:20:27.797 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 251.8205ms
+2025-12-16 19:20:27.822 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:20:27.830 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager) in 192.0793ms
+2025-12-16 19:20:27.832 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:20:27.834 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project - 200 null application/json; charset=utf-8 288.7962ms
+2025-12-16 19:20:30.660 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:20:30.664 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project/6 - null null
+2025-12-16 19:20:30.664 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Tag - null null
+2025-12-16 19:20:30.668 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:20:30.673 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:20:30.677 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:20:30.679 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project/6 - 204 null null 14.7037ms
+2025-12-16 19:20:30.680 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Tag - 204 null null 15.5819ms
+2025-12-16 19:20:30.682 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project/6 - null null
+2025-12-16 19:20:30.682 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:20:30.683 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Tag - null null
+2025-12-16 19:20:30.691 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:20:30.692 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:20:30.694 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:20:30.695 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:20:30.697 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TagController.GetAllTags (ProjectManager)'
+2025-12-16 19:20:30.701 +05:00 [INF] Route matched with {action = "GetAllTags", controller = "Tag"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTags() on controller ProjectManager.Controllers.TagController (ProjectManager).
+2025-12-16 19:20:30.707 +05:00 [INF] Route matched with {action = "GetProjectById", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectById(Int32) on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:20:30.716 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:20:30.719 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:20:30.724 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 28.0978ms
+2025-12-16 19:20:30.725 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name]
+FROM [Tags] AS [t]
+2025-12-16 19:20:30.726 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:20:30.729 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType7`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:20:30.730 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 69.7011ms
+2025-12-16 19:20:30.733 +05:00 [INF] Executed action ProjectManager.Controllers.TagController.GetAllTags (ProjectManager) in 28.8215ms
+2025-12-16 19:20:30.736 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TagController.GetAllTags (ProjectManager)'
+2025-12-16 19:20:30.737 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Tag - 200 null application/json; charset=utf-8 54.0553ms
+2025-12-16 19:20:30.747 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[CreatorName], [t].[Description], [t].[EndDate], [t].[Name], [t].[StartDate], [t].[Status], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t0].[ProjectId], [t0].[UserId], [t0].[Id], [t0].[AccessFailedCount], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [Projects] AS [p]
+    INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[ProjectId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[ProjectId], [t0].[UserId]
+2025-12-16 19:20:30.751 +05:00 [INF] Executing OkObjectResult, writing value of type 'ProjectResponseDto'.
+2025-12-16 19:20:30.753 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager) in 43.4581ms
+2025-12-16 19:20:30.755 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:20:30.757 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project/6 - 200 null application/json; charset=utf-8 75.5938ms
+2025-12-16 19:21:32.622 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:21:32.629 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:32.632 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 9.8445ms
+2025-12-16 19:21:32.639 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7063/api/Task - application/json 265
+2025-12-16 19:21:32.644 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:32.647 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.CreateTask (ProjectManager)'
+2025-12-16 19:21:32.652 +05:00 [INF] Route matched with {action = "CreateTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateTask(ProjectManager.DTOs.CreateTaskDto) on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:21:32.704 +05:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-12-16 19:21:32.726 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__projectId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[CreatorName], [t].[Description], [t].[EndDate], [t].[Name], [t].[StartDate], [t].[Status], [p0].[ProjectId], [p0].[UserId]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status]
+    FROM [Projects] AS [p]
+    WHERE [p].[Id] = @__projectId_0
+) AS [t]
+LEFT JOIN [ProjectUsers] AS [p0] ON [t].[Id] = [p0].[ProjectId]
+ORDER BY [t].[Id], [p0].[ProjectId]
+2025-12-16 19:21:32.768 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__taskModel_TagIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name]
+FROM [Tags] AS [t]
+WHERE [t].[Id] IN (
+    SELECT [t0].[value]
+    FROM OPENJSON(@__taskModel_TagIds_0) WITH ([value] int '$') AS [t0]
+)
+2025-12-16 19:21:32.959 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Tasks] ([AssignedUserId], [CreatorId], [Description], [DueDate], [Priority], [ProjectId], [Status], [Title])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2025-12-16 19:21:32.989 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [TaskTags] ([TagId], [TaskId])
+VALUES (@p8, @p9),
+(@p10, @p11),
+(@p12, @p13);
+2025-12-16 19:21:33.059 +05:00 [INF] Executed DbCommand (29ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Int32), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (DbType = Int32), @p23='?' (Size = 4000), @p24='?' (Size = 4000), @p25='?' (Size = 4000), @p26='?' (DbType = DateTime2), @p27='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [ActivityLogs] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, 0),
+(@p7, @p8, @p9, @p10, @p11, @p12, @p13, 1),
+(@p14, @p15, @p16, @p17, @p18, @p19, @p20, 2),
+(@p21, @p22, @p23, @p24, @p25, @p26, @p27, 3)) AS i ([Action], [EntityId], [EntityName], [NewValues], [OldValues], [Timestamp], [UserId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Action], [EntityId], [EntityName], [NewValues], [OldValues], [Timestamp], [UserId])
+VALUES (i.[Action], i.[EntityId], i.[EntityName], i.[NewValues], i.[OldValues], i.[Timestamp], i.[UserId])
+OUTPUT INSERTED.[Id], i._Position;
+2025-12-16 19:21:33.065 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-12-16 19:21:33.066 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.CreateTask (ProjectManager) in 411.4645ms
+2025-12-16 19:21:33.068 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.CreateTask (ProjectManager)'
+2025-12-16 19:21:33.070 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7063/api/Task - 204 null null 430.5906ms
+2025-12-16 19:21:33.081 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:21:33.085 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:33.087 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:21:33.089 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:21:33.094 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:21:33.096 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:21:33.098 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 5.9696ms
+2025-12-16 19:21:33.099 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:21:33.102 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 21.2287ms
+2025-12-16 19:21:41.166 +05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7063/api/Audit - null null
+2025-12-16 19:21:41.176 +05:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-16 19:21:41.180 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-16 19:21:41.183 +05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7063/api/Audit - 401 0 null 16.9635ms
+2025-12-16 19:21:41.421 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Audit - null null
+2025-12-16 19:21:41.425 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:41.428 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Audit - 204 null null 6.6053ms
+2025-12-16 19:21:41.434 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Audit - null null
+2025-12-16 19:21:41.437 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:41.438 +05:00 [INF] Executing endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:21:41.443 +05:00 [INF] Route matched with {action = "GetLogs", controller = "Audit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLogs(Int32, Int32) on controller AuditController (ProjectManager).
+2025-12-16 19:21:41.479 +05:00 [INF] Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Action], [a].[EntityName], [a].[Timestamp], (
+    SELECT TOP(1) [a0].[UserName]
+    FROM [AspNetUsers] AS [a0]
+    WHERE [a0].[Id] = [a].[UserId]) AS [UserName], [a].[OldValues], [a].[NewValues]
+FROM [ActivityLogs] AS [a]
+ORDER BY [a].[Timestamp] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-12-16 19:21:41.482 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType6`7[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:21:41.486 +05:00 [INF] Executed action AuditController.GetLogs (ProjectManager) in 38.7528ms
+2025-12-16 19:21:41.487 +05:00 [INF] Executed endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:21:41.488 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Audit - 200 null application/json; charset=utf-8 54.4111ms
+2025-12-16 19:21:50.444 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project - null null
+2025-12-16 19:21:50.444 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:21:50.448 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:50.451 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:50.453 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project - 204 null null 9.0009ms
+2025-12-16 19:21:50.455 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 10.5811ms
+2025-12-16 19:21:50.458 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project - null null
+2025-12-16 19:21:50.458 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:21:50.464 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:50.466 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:50.467 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:21:50.468 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:21:50.470 +05:00 [INF] Route matched with {action = "GetProjects", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectsAsync() on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:21:50.471 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:21:50.475 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [t].[ProjectId], [t].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [t].[ProjectId], [t].[UserId]
+2025-12-16 19:21:50.476 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:21:50.479 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:21:50.480 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:21:50.481 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager) in 7.6835ms
+2025-12-16 19:21:50.482 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 7.3024ms
+2025-12-16 19:21:50.483 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:21:50.486 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:21:50.488 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project - 200 null application/json; charset=utf-8 29.1582ms
+2025-12-16 19:21:50.489 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 30.871ms
+2025-12-16 19:21:53.643 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:21:53.650 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:53.653 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project/6 - null null
+2025-12-16 19:21:53.653 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:21:53.653 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Tag - null null
+2025-12-16 19:21:53.660 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:53.661 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:21:53.663 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:53.665 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project/6 - 204 null null 12.006ms
+2025-12-16 19:21:53.669 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Tag - 204 null null 15.9849ms
+2025-12-16 19:21:53.670 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project/6 - null null
+2025-12-16 19:21:53.671 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:21:53.672 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Tag - null null
+2025-12-16 19:21:53.678 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:53.680 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:21:53.684 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:53.686 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:21:53.687 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 18.6436ms
+2025-12-16 19:21:53.688 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TagController.GetAllTags (ProjectManager)'
+2025-12-16 19:21:53.689 +05:00 [INF] Route matched with {action = "GetProjectById", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectById(Int32) on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:21:53.690 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:21:53.691 +05:00 [INF] Route matched with {action = "GetAllTags", controller = "Tag"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTags() on controller ProjectManager.Controllers.TagController (ProjectManager).
+2025-12-16 19:21:53.693 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 50.073ms
+2025-12-16 19:21:53.694 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[CreatorName], [t].[Description], [t].[EndDate], [t].[Name], [t].[StartDate], [t].[Status], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t0].[ProjectId], [t0].[UserId], [t0].[Id], [t0].[AccessFailedCount], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [Projects] AS [p]
+    INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[ProjectId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[ProjectId], [t0].[UserId]
+2025-12-16 19:21:53.697 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name]
+FROM [Tags] AS [t]
+2025-12-16 19:21:53.703 +05:00 [INF] Executing OkObjectResult, writing value of type 'ProjectResponseDto'.
+2025-12-16 19:21:53.704 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType7`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:21:53.705 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager) in 12.8245ms
+2025-12-16 19:21:53.706 +05:00 [INF] Executed action ProjectManager.Controllers.TagController.GetAllTags (ProjectManager) in 10.9222ms
+2025-12-16 19:21:53.708 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:21:53.709 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TagController.GetAllTags (ProjectManager)'
+2025-12-16 19:21:53.710 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project/6 - 200 null application/json; charset=utf-8 40.2782ms
+2025-12-16 19:21:53.712 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Tag - 200 null application/json; charset=utf-8 39.8193ms
+2025-12-16 19:21:55.786 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:21:55.791 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:55.793 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - 204 null null 7.6384ms
+2025-12-16 19:21:55.799 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:21:55.810 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:21:55.811 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:21:55.819 +05:00 [INF] Route matched with {action = "GetCommentsForTask", controller = "Comments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCommentsForTask(Int32) on controller ProjectManager.Controllers.CommentsController (ProjectManager).
+2025-12-16 19:21:55.832 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:21:55.859 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__taskId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], GETUTCDATE() AS [CreatedAt], [c].[AuthorId], (
+    SELECT TOP(1) [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[Id] = [c].[AuthorId]) AS [AuthorName], [c].[TaskId]
+FROM [Comments] AS [c]
+WHERE [c].[TaskId] = @__taskId_0
+ORDER BY GETUTCDATE() DESC
+2025-12-16 19:21:55.869 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CommentResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:21:55.871 +05:00 [INF] Executed action ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager) in 49.68ms
+2025-12-16 19:21:55.873 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:21:55.875 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/task/9/Comments - 200 null application/json; charset=utf-8 75.9696ms
+2025-12-16 19:22:08.225 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:22:08.231 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:08.231 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - 204 null null 6.1986ms
+2025-12-16 19:22:08.234 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7063/api/task/9/Comments - application/json 31
+2025-12-16 19:22:08.238 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:08.239 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.CommentsController.AddCommentToTask (ProjectManager)'
+2025-12-16 19:22:08.242 +05:00 [INF] Route matched with {action = "AddCommentToTask", controller = "Comments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddCommentToTask(Int32, ProjectManager.DTOs.CreateCommentDto) on controller ProjectManager.Controllers.CommentsController (ProjectManager).
+2025-12-16 19:22:08.247 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:22:08.263 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Comments] ([AuthorId], [Content], [CreatedAt], [TaskId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2025-12-16 19:22:08.270 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ActivityLogs] ([Action], [EntityId], [EntityName], [NewValues], [OldValues], [Timestamp], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-12-16 19:22:08.273 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-16 19:22:08.275 +05:00 [INF] Executed action ProjectManager.Controllers.CommentsController.AddCommentToTask (ProjectManager) in 31.5143ms
+2025-12-16 19:22:08.277 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.CommentsController.AddCommentToTask (ProjectManager)'
+2025-12-16 19:22:08.278 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7063/api/task/9/Comments - 200 null application/json; charset=utf-8 43.8327ms
+2025-12-16 19:22:08.533 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:22:08.544 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:08.547 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:22:08.548 +05:00 [INF] Route matched with {action = "GetCommentsForTask", controller = "Comments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCommentsForTask(Int32) on controller ProjectManager.Controllers.CommentsController (ProjectManager).
+2025-12-16 19:22:08.551 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:22:08.556 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__taskId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], GETUTCDATE() AS [CreatedAt], [c].[AuthorId], (
+    SELECT TOP(1) [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[Id] = [c].[AuthorId]) AS [AuthorName], [c].[TaskId]
+FROM [Comments] AS [c]
+WHERE [c].[TaskId] = @__taskId_0
+ORDER BY GETUTCDATE() DESC
+2025-12-16 19:22:08.558 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CommentResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:22:08.562 +05:00 [INF] Executed action ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager) in 12.2895ms
+2025-12-16 19:22:08.563 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:22:08.564 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/task/9/Comments - 200 null application/json; charset=utf-8 31.2288ms
+2025-12-16 19:22:16.806 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task/9 - null null
+2025-12-16 19:22:16.813 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:16.815 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task/9 - 204 null null 8.787ms
+2025-12-16 19:22:16.819 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7063/api/Task/9 - application/json 206
+2025-12-16 19:22:16.830 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:16.833 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.UpdateTask (ProjectManager)'
+2025-12-16 19:22:16.839 +05:00 [INF] Route matched with {action = "UpdateTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTask(Int32, ProjectManager.DTOs.UpdateTaskDto) on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:22:16.870 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[AssignedUserId], [t0].[CreatorId], [t0].[Description], [t0].[DueDate], [t0].[Priority], [t0].[ProjectId], [t0].[Status], [t0].[Title], [t0].[Id0], [t0].[CreatorId0], [t0].[CreatorName], [t0].[Description0], [t0].[EndDate], [t0].[Name], [t0].[StartDate], [t0].[Status0], [t1].[TagId], [t1].[TaskId]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title], [p].[Id] AS [Id0], [p].[CreatorId] AS [CreatorId0], [p].[CreatorName], [p].[Description] AS [Description0], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status] AS [Status0]
+    FROM [Tasks] AS [t]
+    INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN [TaskTags] AS [t1] ON [t0].[Id] = [t1].[TaskId]
+ORDER BY [t0].[Id], [t0].[Id0], [t1].[TagId]
+2025-12-16 19:22:16.892 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [TaskTags] ([TagId], [TaskId])
+VALUES (@p0, @p1);
+2025-12-16 19:22:16.899 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ActivityLogs] ([Action], [EntityId], [EntityName], [NewValues], [OldValues], [Timestamp], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-12-16 19:22:16.902 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-12-16 19:22:16.906 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.UpdateTask (ProjectManager) in 63.9527ms
+2025-12-16 19:22:16.908 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.UpdateTask (ProjectManager)'
+2025-12-16 19:22:16.909 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7063/api/Task/9 - 204 null null 89.1828ms
+2025-12-16 19:22:16.925 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:22:16.925 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task/{id} - null null
+2025-12-16 19:22:16.927 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:16.932 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:16.933 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 8.3607ms
+2025-12-16 19:22:16.934 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task/{id} - 204 null null 9.3629ms
+2025-12-16 19:22:16.939 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:22:16.940 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task/{id} - null null
+2025-12-16 19:22:16.947 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:16.950 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:16.952 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:22:16.953 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTaskById (ProjectManager)'
+2025-12-16 19:22:16.954 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:22:16.958 +05:00 [INF] Route matched with {action = "GetTaskById", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTaskById(Int32) on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:22:16.958 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:22:16.963 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:22:16.966 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 9.0629ms
+2025-12-16 19:22:16.968 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:22:16.969 +05:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-12-16 19:22:16.970 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 30.5621ms
+2025-12-16 19:22:16.985 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTaskById (ProjectManager) in 25.2662ms
+2025-12-16 19:22:16.986 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTaskById (ProjectManager)'
+2025-12-16 19:22:16.987 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task/{id} - 400 null application/problem+json; charset=utf-8 47.0795ms
+2025-12-16 19:22:25.125 +05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7063/api/Audit - null null
+2025-12-16 19:22:25.131 +05:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-16 19:22:25.132 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-16 19:22:25.133 +05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7063/api/Audit - 401 0 null 7.608ms
+2025-12-16 19:22:25.393 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Audit - null null
+2025-12-16 19:22:25.397 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:25.398 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Audit - 204 null null 4.8191ms
+2025-12-16 19:22:25.428 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Audit - null null
+2025-12-16 19:22:25.431 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:25.433 +05:00 [INF] Executing endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:22:25.434 +05:00 [INF] Route matched with {action = "GetLogs", controller = "Audit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLogs(Int32, Int32) on controller AuditController (ProjectManager).
+2025-12-16 19:22:25.454 +05:00 [INF] Executed DbCommand (14ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Action], [a].[EntityName], [a].[Timestamp], (
+    SELECT TOP(1) [a0].[UserName]
+    FROM [AspNetUsers] AS [a0]
+    WHERE [a0].[Id] = [a].[UserId]) AS [UserName], [a].[OldValues], [a].[NewValues]
+FROM [ActivityLogs] AS [a]
+ORDER BY [a].[Timestamp] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-12-16 19:22:25.458 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType6`7[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:22:25.460 +05:00 [INF] Executed action AuditController.GetLogs (ProjectManager) in 23.1677ms
+2025-12-16 19:22:25.461 +05:00 [INF] Executed endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:22:25.463 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Audit - 200 null application/json; charset=utf-8 34.8794ms
+2025-12-16 19:22:36.473 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project - null null
+2025-12-16 19:22:36.473 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:22:36.479 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:36.484 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:36.487 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project - 204 null null 14.7947ms
+2025-12-16 19:22:36.490 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 16.8884ms
+2025-12-16 19:22:36.490 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project - null null
+2025-12-16 19:22:36.499 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:22:36.509 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:36.514 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:36.516 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:22:36.516 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:22:36.517 +05:00 [INF] Route matched with {action = "GetProjects", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectsAsync() on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:22:36.518 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:22:36.524 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [t].[ProjectId], [t].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [t].[ProjectId], [t].[UserId]
+2025-12-16 19:22:36.525 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:22:36.528 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:22:36.531 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:22:36.532 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager) in 12.4017ms
+2025-12-16 19:22:36.534 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 11.9733ms
+2025-12-16 19:22:36.535 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:22:36.537 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:22:36.538 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project - 200 null application/json; charset=utf-8 47.8195ms
+2025-12-16 19:22:36.539 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 40.2733ms
+2025-12-16 19:22:38.595 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:22:38.600 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project/6 - null null
+2025-12-16 19:22:38.600 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Tag - null null
+2025-12-16 19:22:38.604 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:38.607 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:38.611 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:38.613 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:22:38.614 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project/6 - 204 null null 13.6932ms
+2025-12-16 19:22:38.615 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Tag - 204 null null 14.7878ms
+2025-12-16 19:22:38.616 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:22:38.617 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project/6 - null null
+2025-12-16 19:22:38.617 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Tag - null null
+2025-12-16 19:22:38.629 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:38.629 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:22:38.631 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:38.632 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:22:38.634 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:22:38.635 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TagController.GetAllTags (ProjectManager)'
+2025-12-16 19:22:38.636 +05:00 [INF] Route matched with {action = "GetProjectById", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectById(Int32) on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:22:38.637 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 12.0057ms
+2025-12-16 19:22:38.638 +05:00 [INF] Route matched with {action = "GetAllTags", controller = "Tag"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTags() on controller ProjectManager.Controllers.TagController (ProjectManager).
+2025-12-16 19:22:38.640 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:22:38.641 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[CreatorName], [t].[Description], [t].[EndDate], [t].[Name], [t].[StartDate], [t].[Status], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t0].[ProjectId], [t0].[UserId], [t0].[Id], [t0].[AccessFailedCount], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [Projects] AS [p]
+    INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[ProjectId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[ProjectId], [t0].[UserId]
+2025-12-16 19:22:38.645 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 49.2476ms
+2025-12-16 19:22:38.648 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name]
+FROM [Tags] AS [t]
+2025-12-16 19:22:38.649 +05:00 [INF] Executing OkObjectResult, writing value of type 'ProjectResponseDto'.
+2025-12-16 19:22:38.653 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType7`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:22:38.654 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager) in 14.6449ms
+2025-12-16 19:22:38.655 +05:00 [INF] Executed action ProjectManager.Controllers.TagController.GetAllTags (ProjectManager) in 12.4167ms
+2025-12-16 19:22:38.656 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:22:38.657 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TagController.GetAllTags (ProjectManager)'
+2025-12-16 19:22:38.658 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project/6 - 200 null application/json; charset=utf-8 41.1696ms
+2025-12-16 19:22:38.661 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Tag - 200 null application/json; charset=utf-8 43.6238ms
+2025-12-16 19:22:40.008 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:22:40.014 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:40.016 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - 204 null null 7.9982ms
+2025-12-16 19:22:40.021 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:22:40.028 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:40.029 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:22:40.030 +05:00 [INF] Route matched with {action = "GetCommentsForTask", controller = "Comments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCommentsForTask(Int32) on controller ProjectManager.Controllers.CommentsController (ProjectManager).
+2025-12-16 19:22:40.042 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:22:40.050 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__taskId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], GETUTCDATE() AS [CreatedAt], [c].[AuthorId], (
+    SELECT TOP(1) [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[Id] = [c].[AuthorId]) AS [AuthorName], [c].[TaskId]
+FROM [Comments] AS [c]
+WHERE [c].[TaskId] = @__taskId_0
+ORDER BY GETUTCDATE() DESC
+2025-12-16 19:22:40.052 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CommentResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:22:40.053 +05:00 [INF] Executed action ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager) in 21.8275ms
+2025-12-16 19:22:40.055 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:22:40.056 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/task/9/Comments - 200 null application/json; charset=utf-8 35.5575ms
+2025-12-16 19:22:53.805 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task/9 - null null
+2025-12-16 19:22:53.809 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:53.811 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task/9 - 204 null null 5.1242ms
+2025-12-16 19:22:53.814 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7063/api/Task/9 - application/json 170
+2025-12-16 19:22:53.817 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:53.819 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.UpdateTask (ProjectManager)'
+2025-12-16 19:22:53.822 +05:00 [INF] Route matched with {action = "UpdateTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTask(Int32, ProjectManager.DTOs.UpdateTaskDto) on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:22:53.831 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[AssignedUserId], [t0].[CreatorId], [t0].[Description], [t0].[DueDate], [t0].[Priority], [t0].[ProjectId], [t0].[Status], [t0].[Title], [t0].[Id0], [t0].[CreatorId0], [t0].[CreatorName], [t0].[Description0], [t0].[EndDate], [t0].[Name], [t0].[StartDate], [t0].[Status0], [t1].[TagId], [t1].[TaskId]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title], [p].[Id] AS [Id0], [p].[CreatorId] AS [CreatorId0], [p].[CreatorName], [p].[Description] AS [Description0], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status] AS [Status0]
+    FROM [Tasks] AS [t]
+    INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN [TaskTags] AS [t1] ON [t0].[Id] = [t1].[TaskId]
+ORDER BY [t0].[Id], [t0].[Id0], [t1].[TagId]
+2025-12-16 19:22:53.844 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Tasks] SET [Description] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-12-16 19:22:53.856 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ActivityLogs] ([Action], [EntityId], [EntityName], [NewValues], [OldValues], [Timestamp], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-12-16 19:22:53.859 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-12-16 19:22:53.860 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.UpdateTask (ProjectManager) in 35.8836ms
+2025-12-16 19:22:53.861 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.UpdateTask (ProjectManager)'
+2025-12-16 19:22:53.863 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7063/api/Task/9 - 204 null null 49.3403ms
+2025-12-16 19:22:53.877 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:22:53.882 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:53.884 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 6.622ms
+2025-12-16 19:22:53.889 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:22:53.894 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:22:53.896 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:22:53.898 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:22:53.903 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:22:53.906 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:22:53.907 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 6.2554ms
+2025-12-16 19:22:53.908 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:22:53.910 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 20.2766ms
+2025-12-16 19:23:03.654 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Project/6/members/f71b3b96-0f34-4480-bfb6-c6e36b25906d - null null
+2025-12-16 19:23:03.663 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:03.665 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Project/6/members/f71b3b96-0f34-4480-bfb6-c6e36b25906d - 204 null null 10.7426ms
+2025-12-16 19:23:03.667 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:7063/api/Project/6/members/f71b3b96-0f34-4480-bfb6-c6e36b25906d - null null
+2025-12-16 19:23:03.672 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:03.675 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.RemoveMember (ProjectManager)'
+2025-12-16 19:23:03.678 +05:00 [INF] Route matched with {action = "RemoveMember", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveMember(Int32, System.String) on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:23:03.685 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__projectId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[CreatorName], [t].[Description], [t].[EndDate], [t].[Name], [t].[StartDate], [t].[Status], [p0].[ProjectId], [p0].[UserId]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status]
+    FROM [Projects] AS [p]
+    WHERE [p].[Id] = @__projectId_0
+) AS [t]
+LEFT JOIN [ProjectUsers] AS [p0] ON [t].[Id] = [p0].[ProjectId]
+ORDER BY [t].[Id], [p0].[ProjectId]
+2025-12-16 19:23:03.705 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__projectId_0='?' (DbType = Int32), @__userId_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Tasks] AS [t]
+        WHERE [t].[ProjectId] = @__projectId_0 AND [t].[AssignedUserId] = @__userId_1 AND [t].[Status] <> N'Done') THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-12-16 19:23:03.720 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__projectId_0='?' (DbType = Int32), @__userId_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[ProjectId], [p].[UserId]
+FROM [ProjectUsers] AS [p]
+WHERE [p].[ProjectId] = @__projectId_0 AND [p].[UserId] = @__userId_1
+2025-12-16 19:23:03.734 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [ProjectUsers]
+OUTPUT 1
+WHERE [ProjectId] = @p0 AND [UserId] = @p1;
+2025-12-16 19:23:03.746 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ActivityLogs] ([Action], [EntityId], [EntityName], [NewValues], [OldValues], [Timestamp], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-12-16 19:23:03.750 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-12-16 19:23:03.752 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.RemoveMember (ProjectManager) in 72.2224ms
+2025-12-16 19:23:03.754 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.RemoveMember (ProjectManager)'
+2025-12-16 19:23:03.755 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:7063/api/Project/6/members/f71b3b96-0f34-4480-bfb6-c6e36b25906d - 204 null null 88.056ms
+2025-12-16 19:23:03.767 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project/6 - null null
+2025-12-16 19:23:03.769 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:03.771 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project/6 - 204 null null 3.6129ms
+2025-12-16 19:23:03.776 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project/6 - null null
+2025-12-16 19:23:03.780 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:03.782 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:23:03.783 +05:00 [INF] Route matched with {action = "GetProjectById", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectById(Int32) on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:23:03.786 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[CreatorName], [t].[Description], [t].[EndDate], [t].[Name], [t].[StartDate], [t].[Status], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t0].[ProjectId], [t0].[UserId], [t0].[Id], [t0].[AccessFailedCount], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [Projects] AS [p]
+    INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[ProjectId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[ProjectId], [t0].[UserId]
+2025-12-16 19:23:03.790 +05:00 [INF] Executing OkObjectResult, writing value of type 'ProjectResponseDto'.
+2025-12-16 19:23:03.793 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager) in 8.1876ms
+2025-12-16 19:23:03.795 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:23:03.796 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project/6 - 200 null application/json; charset=utf-8 20.3567ms
+2025-12-16 19:23:11.280 +05:00 [INF] Request starting HTTP/1.1 GET https://localhost:7063/api/Audit - null null
+2025-12-16 19:23:11.288 +05:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-12-16 19:23:11.290 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-12-16 19:23:11.291 +05:00 [INF] Request finished HTTP/1.1 GET https://localhost:7063/api/Audit - 401 0 null 11.1966ms
+2025-12-16 19:23:11.508 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Audit - null null
+2025-12-16 19:23:11.511 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:11.511 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Audit - 204 null null 3.4287ms
+2025-12-16 19:23:11.520 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Audit - null null
+2025-12-16 19:23:11.522 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:11.523 +05:00 [INF] Executing endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:23:11.524 +05:00 [INF] Route matched with {action = "GetLogs", controller = "Audit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLogs(Int32, Int32) on controller AuditController (ProjectManager).
+2025-12-16 19:23:11.530 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Action], [a].[EntityName], [a].[Timestamp], (
+    SELECT TOP(1) [a0].[UserName]
+    FROM [AspNetUsers] AS [a0]
+    WHERE [a0].[Id] = [a].[UserId]) AS [UserName], [a].[OldValues], [a].[NewValues]
+FROM [ActivityLogs] AS [a]
+ORDER BY [a].[Timestamp] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-12-16 19:23:11.534 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType6`7[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:23:11.535 +05:00 [INF] Executed action AuditController.GetLogs (ProjectManager) in 9.2426ms
+2025-12-16 19:23:11.536 +05:00 [INF] Executed endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:23:11.538 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Audit - 200 null application/json; charset=utf-8 18.2221ms
+2025-12-16 19:23:22.967 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project - null null
+2025-12-16 19:23:22.967 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:23:22.974 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:22.982 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:22.984 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project - 204 null null 17.3684ms
+2025-12-16 19:23:22.985 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 18.2925ms
+2025-12-16 19:23:22.990 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project - null null
+2025-12-16 19:23:22.991 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:23:22.998 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:23.000 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:23.001 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:23:23.002 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:23:23.003 +05:00 [INF] Route matched with {action = "GetProjects", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectsAsync() on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:23:23.004 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:23:23.009 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [t].[ProjectId], [t].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [t].[ProjectId], [t].[UserId]
+2025-12-16 19:23:23.011 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:23:23.012 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:23:23.014 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:23:23.015 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager) in 7.4946ms
+2025-12-16 19:23:23.016 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 6.8597ms
+2025-12-16 19:23:23.018 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:23:23.019 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:23:23.020 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project - 200 null application/json; charset=utf-8 29.4493ms
+2025-12-16 19:23:23.022 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 31.5264ms
+2025-12-16 19:23:25.227 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project - null null
+2025-12-16 19:23:25.227 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:23:25.232 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:25.235 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:23:25.238 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:23:25.239 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:23:25.241 +05:00 [INF] Route matched with {action = "GetProjects", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectsAsync() on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:23:25.242 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:23:25.244 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [t].[ProjectId], [t].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [t].[ProjectId], [t].[UserId]
+2025-12-16 19:23:25.246 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:23:25.247 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:23:25.249 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:23:25.250 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager) in 6.5957ms
+2025-12-16 19:23:25.251 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 6.6069ms
+2025-12-16 19:23:25.254 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:23:25.256 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:23:25.257 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project - 200 null application/json; charset=utf-8 30.4314ms
+2025-12-16 19:23:25.258 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 31.4847ms
+2025-12-16 19:28:31.766 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Audit - null null
+2025-12-16 19:28:31.773 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:28:31.775 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Audit - 204 null null 8.8491ms
+2025-12-16 19:28:31.778 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Audit - null null
+2025-12-16 19:28:31.787 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:28:31.789 +05:00 [INF] Executing endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:28:31.791 +05:00 [INF] Route matched with {action = "GetLogs", controller = "Audit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLogs(Int32, Int32) on controller AuditController (ProjectManager).
+2025-12-16 19:28:31.803 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Action], [a].[EntityName], [a].[Timestamp], (
+    SELECT TOP(1) [a0].[UserName]
+    FROM [AspNetUsers] AS [a0]
+    WHERE [a0].[Id] = [a].[UserId]) AS [UserName], [a].[OldValues], [a].[NewValues]
+FROM [ActivityLogs] AS [a]
+ORDER BY [a].[Timestamp] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-12-16 19:28:31.806 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType6`7[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:28:31.808 +05:00 [INF] Executed action AuditController.GetLogs (ProjectManager) in 12.9491ms
+2025-12-16 19:28:31.809 +05:00 [INF] Executed endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:28:31.811 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Audit - 200 null application/json; charset=utf-8 33.3104ms
+2025-12-16 19:29:26.463 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/admin/users - null null
+2025-12-16 19:29:26.467 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:26.468 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/admin/users - 204 null null 4.9228ms
+2025-12-16 19:29:26.473 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/admin/users - null null
+2025-12-16 19:29:26.477 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:26.478 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.AdminController.GetAllUsers (ProjectManager)'
+2025-12-16 19:29:26.481 +05:00 [INF] Route matched with {action = "GetAllUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller ProjectManager.Controllers.AdminController (ProjectManager).
+2025-12-16 19:29:26.493 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2025-12-16 19:29:26.507 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:29:26.511 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:29:26.513 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:29:26.516 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:29:26.518 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-16 19:29:26.523 +05:00 [INF] Executed action ProjectManager.Controllers.AdminController.GetAllUsers (ProjectManager) in 39.7993ms
+2025-12-16 19:29:26.524 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.AdminController.GetAllUsers (ProjectManager)'
+2025-12-16 19:29:26.526 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/admin/users - 200 null application/json; charset=utf-8 52.4295ms
+2025-12-16 19:29:27.971 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Audit - null null
+2025-12-16 19:29:27.976 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:27.976 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Audit - 204 null null 5.1614ms
+2025-12-16 19:29:27.979 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Audit - null null
+2025-12-16 19:29:27.982 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:27.983 +05:00 [INF] Executing endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:29:27.985 +05:00 [INF] Route matched with {action = "GetLogs", controller = "Audit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLogs(Int32, Int32) on controller AuditController (ProjectManager).
+2025-12-16 19:29:27.992 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Action], [a].[EntityName], [a].[Timestamp], (
+    SELECT TOP(1) [a0].[UserName]
+    FROM [AspNetUsers] AS [a0]
+    WHERE [a0].[Id] = [a].[UserId]) AS [UserName], [a].[OldValues], [a].[NewValues]
+FROM [ActivityLogs] AS [a]
+ORDER BY [a].[Timestamp] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-12-16 19:29:27.995 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType6`7[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:29:27.997 +05:00 [INF] Executed action AuditController.GetLogs (ProjectManager) in 8.4228ms
+2025-12-16 19:29:27.999 +05:00 [INF] Executed endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:29:28.000 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Audit - 200 null application/json; charset=utf-8 20.6629ms
+2025-12-16 19:29:30.295 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:29:30.295 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project - null null
+2025-12-16 19:29:30.303 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:30.306 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:30.307 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 11.4541ms
+2025-12-16 19:29:30.308 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project - 204 null null 12.341ms
+2025-12-16 19:29:30.310 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:29:30.310 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project - null null
+2025-12-16 19:29:30.317 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:30.320 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:30.321 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:29:30.322 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:29:30.323 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:29:30.324 +05:00 [INF] Route matched with {action = "GetProjects", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectsAsync() on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:29:30.327 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:29:30.330 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:29:30.332 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 6.7631ms
+2025-12-16 19:29:30.335 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:29:30.337 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [t].[ProjectId], [t].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [t].[ProjectId], [t].[UserId]
+2025-12-16 19:29:30.337 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 27.7245ms
+2025-12-16 19:29:30.342 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:29:30.345 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager) in 18.3107ms
+2025-12-16 19:29:30.346 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:29:30.347 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project - 200 null application/json; charset=utf-8 37.5037ms
+2025-12-16 19:29:32.025 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/admin/users - null null
+2025-12-16 19:29:32.034 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:32.036 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/admin/users - 204 null null 10.9908ms
+2025-12-16 19:29:32.038 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/admin/users - null null
+2025-12-16 19:29:32.042 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:29:32.043 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.AdminController.GetAllUsers (ProjectManager)'
+2025-12-16 19:29:32.044 +05:00 [INF] Route matched with {action = "GetAllUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller ProjectManager.Controllers.AdminController (ProjectManager).
+2025-12-16 19:29:32.051 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2025-12-16 19:29:32.054 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:29:32.057 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:29:32.059 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:29:32.061 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:29:32.064 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-16 19:29:32.067 +05:00 [INF] Executed action ProjectManager.Controllers.AdminController.GetAllUsers (ProjectManager) in 21.3947ms
+2025-12-16 19:29:32.069 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.AdminController.GetAllUsers (ProjectManager)'
+2025-12-16 19:29:32.070 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/admin/users - 200 null application/json; charset=utf-8 32.0531ms
+2025-12-16 19:30:37.697 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/account/login - null null
+2025-12-16 19:30:37.706 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:37.708 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/account/login - 204 null null 10.7668ms
+2025-12-16 19:30:37.713 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7063/api/account/login - application/json 52
+2025-12-16 19:30:37.719 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:37.720 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.AccountController.Login (ProjectManager)'
+2025-12-16 19:30:37.725 +05:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ProjectManager.DTOs.LoginDto) on controller ProjectManager.Controllers.AccountController (ProjectManager).
+2025-12-16 19:30:37.737 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-16 19:30:37.823 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:30:37.837 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-12-16 19:30:37.844 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:30:37.851 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-12-16 19:30:37.866 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:30:37.868 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`7[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-16 19:30:37.871 +05:00 [INF] Executed action ProjectManager.Controllers.AccountController.Login (ProjectManager) in 142.4919ms
+2025-12-16 19:30:37.872 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.AccountController.Login (ProjectManager)'
+2025-12-16 19:30:37.875 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7063/api/account/login - 200 null application/json; charset=utf-8 161.7918ms
+2025-12-16 19:30:37.933 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project - null null
+2025-12-16 19:30:37.933 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:30:37.935 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:37.938 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:37.939 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project - 204 null null 6.0406ms
+2025-12-16 19:30:37.940 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 6.9ms
+2025-12-16 19:30:37.948 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project - null null
+2025-12-16 19:30:37.950 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:30:37.954 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:37.956 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:37.958 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:30:37.959 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:30:37.960 +05:00 [INF] Route matched with {action = "GetProjects", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectsAsync() on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:30:37.962 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:30:37.983 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [t].[ProjectId], [t].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+LEFT JOIN (
+    SELECT [p1].[ProjectId], [p1].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p1]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p1].[UserId] = [a0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProjectId]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ProjectUsers] AS [p0]
+    WHERE [p].[Id] = [p0].[ProjectId] AND [p0].[UserId] = @__userId_0)
+ORDER BY [p].[Id], [a].[Id], [t].[ProjectId], [t].[UserId]
+2025-12-16 19:30:37.986 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:30:37.987 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager) in 22.3676ms
+2025-12-16 19:30:37.989 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:30:37.991 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project - 200 null application/json; charset=utf-8 43.6494ms
+2025-12-16 19:30:38.002 +05:00 [INF] Executed DbCommand (27ms) [Parameters=[@__currentUserId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ProjectUsers] AS [p0]
+    WHERE [p].[Id] = [p0].[ProjectId] AND [p0].[UserId] = @__currentUserId_0)
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:30:38.005 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:30:38.006 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 39.333ms
+2025-12-16 19:30:38.010 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:30:38.013 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 62.5481ms
+2025-12-16 19:30:39.461 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:30:39.468 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:39.469 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:30:39.471 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:30:39.476 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project/6 - null null
+2025-12-16 19:30:39.476 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Tag - null null
+2025-12-16 19:30:39.478 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ProjectUsers] AS [p0]
+    WHERE [p].[Id] = [p0].[ProjectId] AND [p0].[UserId] = @__currentUserId_0)
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:30:39.479 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:39.481 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:39.483 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:30:39.483 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project/6 - 204 null null 7.4908ms
+2025-12-16 19:30:39.484 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Tag - 204 null null 7.9275ms
+2025-12-16 19:30:39.485 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 10.7967ms
+2025-12-16 19:30:39.493 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project/6 - null null
+2025-12-16 19:30:39.493 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Tag - null null
+2025-12-16 19:30:39.495 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:30:39.498 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:39.500 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:39.501 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 39.5716ms
+2025-12-16 19:30:39.502 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:30:39.503 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TagController.GetAllTags (ProjectManager)'
+2025-12-16 19:30:39.508 +05:00 [INF] Route matched with {action = "GetProjectById", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectById(Int32) on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:30:39.510 +05:00 [INF] Route matched with {action = "GetAllTags", controller = "Tag"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTags() on controller ProjectManager.Controllers.TagController (ProjectManager).
+2025-12-16 19:30:39.513 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[CreatorName], [t].[Description], [t].[EndDate], [t].[Name], [t].[StartDate], [t].[Status], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t0].[ProjectId], [t0].[UserId], [t0].[Id], [t0].[AccessFailedCount], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+    FROM [Projects] AS [p]
+    INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+    WHERE [p].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[ProjectId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[ProjectId], [t0].[UserId]
+2025-12-16 19:30:39.515 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name]
+FROM [Tags] AS [t]
+2025-12-16 19:30:39.516 +05:00 [INF] Executing OkObjectResult, writing value of type 'ProjectResponseDto'.
+2025-12-16 19:30:39.518 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType7`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:30:39.520 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager) in 8.0599ms
+2025-12-16 19:30:39.521 +05:00 [INF] Executed action ProjectManager.Controllers.TagController.GetAllTags (ProjectManager) in 7.5052ms
+2025-12-16 19:30:39.526 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectById (ProjectManager)'
+2025-12-16 19:30:39.528 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TagController.GetAllTags (ProjectManager)'
+2025-12-16 19:30:39.529 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project/6 - 200 null application/json; charset=utf-8 35.9264ms
+2025-12-16 19:30:39.530 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Tag - 200 null application/json; charset=utf-8 37.0947ms
+2025-12-16 19:30:40.994 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:30:41.006 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:41.008 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - 204 null null 14.4064ms
+2025-12-16 19:30:41.010 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:30:41.014 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:41.015 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:30:41.016 +05:00 [INF] Route matched with {action = "GetCommentsForTask", controller = "Comments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCommentsForTask(Int32) on controller ProjectManager.Controllers.CommentsController (ProjectManager).
+2025-12-16 19:30:41.020 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:30:41.030 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__taskId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], GETUTCDATE() AS [CreatedAt], [c].[AuthorId], (
+    SELECT TOP(1) [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[Id] = [c].[AuthorId]) AS [AuthorName], [c].[TaskId]
+FROM [Comments] AS [c]
+WHERE [c].[TaskId] = @__taskId_0
+ORDER BY GETUTCDATE() DESC
+2025-12-16 19:30:41.032 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CommentResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:30:41.034 +05:00 [INF] Executed action ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager) in 16.1472ms
+2025-12-16 19:30:41.035 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:30:41.037 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/task/9/Comments - 200 null application/json; charset=utf-8 26.6398ms
+2025-12-16 19:30:43.909 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task/9/member/status - null null
+2025-12-16 19:30:43.913 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:43.914 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task/9/member/status - 204 null null 5.1074ms
+2025-12-16 19:30:43.927 +05:00 [INF] Request starting HTTP/2 PUT https://localhost:7063/api/Task/9/member/status - application/json 20
+2025-12-16 19:30:43.929 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:43.930 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.UpdateTaskStatusByMember (ProjectManager)'
+2025-12-16 19:30:43.934 +05:00 [INF] Route matched with {action = "UpdateTaskStatusByMember", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTaskStatusByMember(Int32, ProjectManager.DTOs.ChangeTaskStatusDto) on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:30:43.942 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:30:43.947 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Tasks] SET [Status] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-12-16 19:30:43.951 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ActivityLogs] ([Action], [EntityId], [EntityName], [NewValues], [OldValues], [Timestamp], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-12-16 19:30:43.955 +05:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-12-16 19:30:43.956 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.UpdateTaskStatusByMember (ProjectManager) in 18.3694ms
+2025-12-16 19:30:43.957 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.UpdateTaskStatusByMember (ProjectManager)'
+2025-12-16 19:30:43.958 +05:00 [INF] Request finished HTTP/2 PUT https://localhost:7063/api/Task/9/member/status - 204 null null 30.922ms
+2025-12-16 19:30:43.964 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:30:43.966 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:43.967 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 3.1312ms
+2025-12-16 19:30:43.988 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:30:43.991 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:43.992 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:30:43.992 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:30:43.995 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__currentUserId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+WHERE EXISTS (
+    SELECT 1
+    FROM [ProjectUsers] AS [p0]
+    WHERE [p].[Id] = [p0].[ProjectId] AND [p0].[UserId] = @__currentUserId_0)
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:30:43.997 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:30:43.999 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 4.8691ms
+2025-12-16 19:30:44.001 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:30:44.003 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 15.2202ms
+2025-12-16 19:30:47.216 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:30:47.226 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:47.227 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - 204 null null 10.403ms
+2025-12-16 19:30:47.229 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:30:47.234 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:47.235 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:30:47.236 +05:00 [INF] Route matched with {action = "GetCommentsForTask", controller = "Comments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCommentsForTask(Int32) on controller ProjectManager.Controllers.CommentsController (ProjectManager).
+2025-12-16 19:30:47.239 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:30:47.241 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__taskId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], GETUTCDATE() AS [CreatedAt], [c].[AuthorId], (
+    SELECT TOP(1) [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[Id] = [c].[AuthorId]) AS [AuthorName], [c].[TaskId]
+FROM [Comments] AS [c]
+WHERE [c].[TaskId] = @__taskId_0
+ORDER BY GETUTCDATE() DESC
+2025-12-16 19:30:47.243 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CommentResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:30:47.244 +05:00 [INF] Executed action ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager) in 6.635ms
+2025-12-16 19:30:47.246 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:30:47.247 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/task/9/Comments - 200 null application/json; charset=utf-8 18.1442ms
+2025-12-16 19:30:49.885 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:30:49.891 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:49.892 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - 204 null null 6.9787ms
+2025-12-16 19:30:49.895 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7063/api/task/9/Comments - application/json 18
+2025-12-16 19:30:49.898 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:49.899 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.CommentsController.AddCommentToTask (ProjectManager)'
+2025-12-16 19:30:49.900 +05:00 [INF] Route matched with {action = "AddCommentToTask", controller = "Comments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddCommentToTask(Int32, ProjectManager.DTOs.CreateCommentDto) on controller ProjectManager.Controllers.CommentsController (ProjectManager).
+2025-12-16 19:30:49.903 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:30:49.909 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Comments] ([AuthorId], [Content], [CreatedAt], [TaskId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2025-12-16 19:30:49.914 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ActivityLogs] ([Action], [EntityId], [EntityName], [NewValues], [OldValues], [Timestamp], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-12-16 19:30:49.917 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-16 19:30:49.919 +05:00 [INF] Executed action ProjectManager.Controllers.CommentsController.AddCommentToTask (ProjectManager) in 16.835ms
+2025-12-16 19:30:49.920 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.CommentsController.AddCommentToTask (ProjectManager)'
+2025-12-16 19:30:49.922 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7063/api/task/9/Comments - 200 null application/json; charset=utf-8 27.5024ms
+2025-12-16 19:30:49.988 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:30:49.991 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:49.993 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:30:49.994 +05:00 [INF] Route matched with {action = "GetCommentsForTask", controller = "Comments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCommentsForTask(Int32) on controller ProjectManager.Controllers.CommentsController (ProjectManager).
+2025-12-16 19:30:49.999 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:30:50.002 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__taskId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], GETUTCDATE() AS [CreatedAt], [c].[AuthorId], (
+    SELECT TOP(1) [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[Id] = [c].[AuthorId]) AS [AuthorName], [c].[TaskId]
+FROM [Comments] AS [c]
+WHERE [c].[TaskId] = @__taskId_0
+ORDER BY GETUTCDATE() DESC
+2025-12-16 19:30:50.004 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CommentResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:30:50.006 +05:00 [INF] Executed action ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager) in 9.0088ms
+2025-12-16 19:30:50.007 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:30:50.009 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/task/9/Comments - 200 null application/json; charset=utf-8 20.1225ms
+2025-12-16 19:30:55.713 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:30:55.720 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:55.721 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/task/9/Comments - 204 null null 7.4806ms
+2025-12-16 19:30:55.723 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/task/9/Comments - null null
+2025-12-16 19:30:55.729 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:55.729 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:30:55.731 +05:00 [INF] Route matched with {action = "GetCommentsForTask", controller = "Comments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCommentsForTask(Int32) on controller ProjectManager.Controllers.CommentsController (ProjectManager).
+2025-12-16 19:30:55.733 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[AssignedUserId], [t].[CreatorId], [t].[Description], [t].[DueDate], [t].[Priority], [t].[ProjectId], [t].[Status], [t].[Title]
+FROM [Tasks] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-12-16 19:30:55.736 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__taskId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Content], GETUTCDATE() AS [CreatedAt], [c].[AuthorId], (
+    SELECT TOP(1) [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE [a].[Id] = [c].[AuthorId]) AS [AuthorName], [c].[TaskId]
+FROM [Comments] AS [c]
+WHERE [c].[TaskId] = @__taskId_0
+ORDER BY GETUTCDATE() DESC
+2025-12-16 19:30:55.738 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CommentResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:30:55.739 +05:00 [INF] Executed action ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager) in 7.0414ms
+2025-12-16 19:30:55.741 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.CommentsController.GetCommentsForTask (ProjectManager)'
+2025-12-16 19:30:55.743 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/task/9/Comments - 200 null application/json; charset=utf-8 20.4734ms
+2025-12-16 19:30:58.354 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task/9 - null null
+2025-12-16 19:30:58.361 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:58.362 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task/9 - 204 null null 8.3151ms
+2025-12-16 19:30:58.366 +05:00 [INF] Request starting HTTP/2 DELETE https://localhost:7063/api/Task/9 - null null
+2025-12-16 19:30:58.372 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:30:58.373 +05:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|Manager)
+2025-12-16 19:30:58.375 +05:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-12-16 19:30:58.376 +05:00 [INF] Request finished HTTP/2 DELETE https://localhost:7063/api/Task/9 - 403 0 null 10.6517ms
+2025-12-16 19:31:09.808 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/account/login - null null
+2025-12-16 19:31:09.817 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:31:09.819 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/account/login - 204 null null 11.3735ms
+2025-12-16 19:31:09.957 +05:00 [INF] Request starting HTTP/2 POST https://localhost:7063/api/account/login - application/json 54
+2025-12-16 19:31:09.966 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:31:09.968 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.AccountController.Login (ProjectManager)'
+2025-12-16 19:31:09.969 +05:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ProjectManager.DTOs.LoginDto) on controller ProjectManager.Controllers.AccountController (ProjectManager).
+2025-12-16 19:31:09.974 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-12-16 19:31:10.050 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:31:10.056 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-12-16 19:31:10.058 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-12-16 19:31:10.061 +05:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-12-16 19:31:10.066 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-12-16 19:31:10.070 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`7[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-12-16 19:31:10.072 +05:00 [INF] Executed action ProjectManager.Controllers.AccountController.Login (ProjectManager) in 100.1484ms
+2025-12-16 19:31:10.074 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.AccountController.Login (ProjectManager)'
+2025-12-16 19:31:10.075 +05:00 [INF] Request finished HTTP/2 POST https://localhost:7063/api/account/login - 200 null application/json; charset=utf-8 117.395ms
+2025-12-16 19:31:10.137 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/project - null null
+2025-12-16 19:31:10.140 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Task - null null
+2025-12-16 19:31:10.141 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:31:10.143 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:31:10.144 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/project - 204 null null 6.7092ms
+2025-12-16 19:31:10.146 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Task - 204 null null 6.2547ms
+2025-12-16 19:31:10.149 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/project - null null
+2025-12-16 19:31:10.155 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Task - null null
+2025-12-16 19:31:10.159 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:31:10.162 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:31:10.164 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:31:10.165 +05:00 [INF] Executing endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:31:10.167 +05:00 [INF] Route matched with {action = "GetProjects", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProjectsAsync() on controller ProjectManager.Controllers.ProjectController (ProjectManager).
+2025-12-16 19:31:10.169 +05:00 [INF] Route matched with {action = "GetTasks", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTasksAsync() on controller ProjectManager.Controllers.TaskController (ProjectManager).
+2025-12-16 19:31:10.173 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CreatorId], [p].[CreatorName], [p].[Description], [p].[EndDate], [p].[Name], [p].[StartDate], [p].[Status], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [t].[ProjectId], [t].[UserId], [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName]
+FROM [Projects] AS [p]
+INNER JOIN [AspNetUsers] AS [a] ON [p].[CreatorId] = [a].[Id]
+LEFT JOIN (
+    SELECT [p0].[ProjectId], [p0].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+    FROM [ProjectUsers] AS [p0]
+    INNER JOIN [AspNetUsers] AS [a0] ON [p0].[UserId] = [a0].[Id]
+) AS [t] ON [p].[Id] = [t].[ProjectId]
+ORDER BY [p].[Id], [a].[Id], [t].[ProjectId], [t].[UserId]
+2025-12-16 19:31:10.175 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Title], [t].[Description], [t].[Status], [t].[Priority], [t].[DueDate], [t].[CreatorId], [t].[ProjectId], [p].[Name], [a].[FirstName] + N' ' + [a].[LastName], [t].[AssignedUserId], [p].[Id], [a].[Id], [t1].[Name], [t1].[TagId], [t1].[TaskId], [t1].[Id]
+FROM [Tasks] AS [t]
+INNER JOIN [Projects] AS [p] ON [t].[ProjectId] = [p].[Id]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AssignedUserId] = [a].[Id]
+LEFT JOIN (
+    SELECT [t2].[Name], [t0].[TagId], [t0].[TaskId], [t2].[Id]
+    FROM [TaskTags] AS [t0]
+    INNER JOIN [Tags] AS [t2] ON [t0].[TagId] = [t2].[Id]
+) AS [t1] ON [t].[Id] = [t1].[TaskId]
+ORDER BY [t].[Id], [p].[Id], [a].[Id], [t1].[TagId], [t1].[TaskId]
+2025-12-16 19:31:10.177 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:31:10.179 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectManager.DTOs.TaskResponseDto, ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:31:10.181 +05:00 [INF] Executed action ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager) in 9.1918ms
+2025-12-16 19:31:10.183 +05:00 [INF] Executed action ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager) in 9.5626ms
+2025-12-16 19:31:10.186 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.ProjectController.GetProjectsAsync (ProjectManager)'
+2025-12-16 19:31:10.188 +05:00 [INF] Executed endpoint 'ProjectManager.Controllers.TaskController.GetTasksAsync (ProjectManager)'
+2025-12-16 19:31:10.190 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/project - 200 null application/json; charset=utf-8 40.4366ms
+2025-12-16 19:31:10.192 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Task - 200 null application/json; charset=utf-8 37.0347ms
+2025-12-16 19:31:11.419 +05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7063/api/Audit - null null
+2025-12-16 19:31:11.427 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:31:11.430 +05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7063/api/Audit - 204 null null 10.565ms
+2025-12-16 19:31:11.433 +05:00 [INF] Request starting HTTP/2 GET https://localhost:7063/api/Audit - null null
+2025-12-16 19:31:11.437 +05:00 [INF] CORS policy execution successful.
+2025-12-16 19:31:11.438 +05:00 [INF] Executing endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:31:11.439 +05:00 [INF] Route matched with {action = "GetLogs", controller = "Audit"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLogs(Int32, Int32) on controller AuditController (ProjectManager).
+2025-12-16 19:31:11.447 +05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Action], [a].[EntityName], [a].[Timestamp], (
+    SELECT TOP(1) [a0].[UserName]
+    FROM [AspNetUsers] AS [a0]
+    WHERE [a0].[Id] = [a].[UserId]) AS [UserName], [a].[OldValues], [a].[NewValues]
+FROM [ActivityLogs] AS [a]
+ORDER BY [a].[Timestamp] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-12-16 19:31:11.450 +05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType6`7[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], ProjectManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-16 19:31:11.451 +05:00 [INF] Executed action AuditController.GetLogs (ProjectManager) in 10.5338ms
+2025-12-16 19:31:11.453 +05:00 [INF] Executed endpoint 'AuditController.GetLogs (ProjectManager)'
+2025-12-16 19:31:11.454 +05:00 [INF] Request finished HTTP/2 GET https://localhost:7063/api/Audit - 200 null application/json; charset=utf-8 20.7064ms
